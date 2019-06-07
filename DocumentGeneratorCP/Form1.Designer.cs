@@ -48,6 +48,7 @@
             // 
             // typeComboBox
             // 
+            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Items.AddRange(new object[] {
             "Application",
@@ -57,6 +58,7 @@
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(153, 21);
             this.typeComboBox.TabIndex = 1;
+            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
             // 
             // generatebtn
             // 
@@ -74,17 +76,18 @@
             this.resultBox.Location = new System.Drawing.Point(260, 62);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
+            this.resultBox.ReadOnly = true;
             this.resultBox.Size = new System.Drawing.Size(456, 365);
             this.resultBox.TabIndex = 3;
+            this.resultBox.TextChanged += new System.EventHandler(this.resultBox_TextChanged);
             // 
             // SpecifyLabel
             // 
             this.SpecifyLabel.AutoSize = true;
             this.SpecifyLabel.Location = new System.Drawing.Point(260, 43);
             this.SpecifyLabel.Name = "SpecifyLabel";
-            this.SpecifyLabel.Size = new System.Drawing.Size(243, 13);
+            this.SpecifyLabel.Size = new System.Drawing.Size(0, 13);
             this.SpecifyLabel.TabIndex = 4;
-            this.SpecifyLabel.Text = "More information about the generated document...";
             // 
             // Form1
             // 
@@ -98,6 +101,7 @@
             this.Controls.Add(this.doctypelbl);
             this.Name = "Form1";
             this.Text = "Document Generator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

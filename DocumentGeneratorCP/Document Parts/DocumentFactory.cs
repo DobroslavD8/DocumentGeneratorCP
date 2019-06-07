@@ -8,7 +8,7 @@ namespace DocumentGeneratorCP
 {
     class DocumentFactory
     {
-        public static DocumentBuilder MatchDocumentType(string key)
+        public static DocumentBuilder MatchDocumentType(string key, IMessage message)
         {
             switch (key)
             {
